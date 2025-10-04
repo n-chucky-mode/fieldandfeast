@@ -1,14 +1,15 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head><!--*****************head*******************************-->
-<meta charset="UTF-8"/>
+<meta charset="UTF-8">
 <!--Ensures proper scaling on phones-->
-<meta name="viewport" content="width=device-width, initial scale=1" />
+<meta name="viewport" content="width=device-width, initial scale=1">
 <title>Field and Feast</title>
 <!--Link to css stylesheet-->
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles.css">
 </head> <!--*****************end of head*******************************-->
 
 <body>
@@ -40,40 +41,82 @@
     
             <h1 class="section_title">Welcome to Field & Feast</h1>
             <p class=" lead">At Field & Feast, we believe that the finest meals begin at the source. Rooted in tradition yet refined for 
-            he modern palate, our farm-to-table philosophy celebrates the beauty of seasonality, sustainability, and craftsmanship. 
+            the modern palate, our farm-to-table philosophy celebrates the beauty of seasonality, sustainability, and craftsmanship. 
             From the sun-drenched fields where our produce is grown to the artfully curated dishes we serve, every detail is designed 
             to bring you an experience of unparalleled quality and flavor.</p>
         </section><!--End of about section-->
 
         <!--Offerings section-->
         <section id="offerings" class="section_container">
-        <h2 class="section_title">Our Offerings</h2>
+        <h2>Our Offerings</h2>
             <div class="offerings">
-                <article class="card_card_sage">
+                <article class="sage_card">
                     <h3 class="card_title">Artisan Provisions</h3>
                     <p>Hand-selected, seasonal ingredients sourced from our estate farm and trusted local growers. Each item is chosen for its 
                     freshness, flavor, and integrity.</p>
                 </article>
 
-                <article class="card_card_sage"></article>
+                <article class="sage_card">
                     <h3 class="card_title">Exclusive Dining Experiences</h3>
-                    <p>join us for intimate chef-led tastings and farm-to-table feasts, where carefully crafted menus highlight the best of the season.</p>
+                    <p>Join us for intimate chef-led tastings and farm-to-table feasts, where carefully crafted menus highlight the best of the season.</p>
                 </article>
-
-                <article>
-                    <h3>The Field & Feast Monthly Basket</h3>
+                <!--Wide card that spans both grid columns at medium+-->
+                <article class="card_wide">
+                    <h3 class="card_title">The Field &amp; Feast Monthly Basket</h3>
                     <p> 
                         Experience a curated selection of premium seasonal ingredients delivered to your doorstep each month.</p>
+                        <!--List for the 3 items-->
+                        <ul class="checklist">
+                            <li><strong>Hand-Harvested Produce:</strong> Fresh, organic fruits and vegetables.</li>
+                            <li><strong>Artisan-Crafted Goods:</strong> Specialty cheeses, house-made preserves, and small-batch baked goods.</li>
+                            <li><strong>Exclusive Recipes &amp; Pairings:</strong> Thoughtfully designed by our chefs to inspire culinary creativity.</li>
+                        </ul>
+                        <p>Elevate your home dining with the finest farm-to-table offerings, elegantly packaged and delivered with care.</p>
                 </article>
+            </div>
+        </section><!--End of offerings section-->
 
-                <article>
-                    <h3>Hand-Harvested Produce: Fresh, organic fruits and vegetables.</h3>
-                    <p>
-                        Artisan-Crafted Goods: Specialty cheeses, house-made preserves, and small-batch baked goods.
-                        Exclusive Recipes & Pairings: Thoughtfully designed by our chefs to inspire culinary creativity. </p>
-                </article>
+        <!--************Gallery Section******************-->
+        <section id="Gallery" class="section_container">
+            <h2>A Gallery of a Field &amp; Feast</h2>
+            <p>Experience the elegance and artistry behind Field &amp; Feast through our curated collection of images.
+                From lush fields and handcrafted ingredients to beautifully plated farm-to-table creations, each photo
+                tells the story of our commitment to excellence.</p>
+
+            <div class="gallery_grid">
+                <figure class="gallery_card">
+                    <img
+                    src="images/tomatoes-300w.jpg"
+                    srcset="images/tomatoes-200w.jpg 200w, images/tomatoes-300w.jpg 300w, images/tomatoes-600w.jpg 600w"
+
+                    sizes="(min-width: 1200px) 20vw, (min-width: 900px) 30vw, (min-width: 600px) 45vw, 100vw"
+                    alt= " Heirloom tomatoes at peak ripeness."
+                    loading="lazy" decoding="async">
+                    <figcaption><em>Heirloom tomatoes at peak ripeness.</em></figcaption>
+                </figure>
+
+                <figure class="gallery_card">
+                    <img
+                    src="images/olive-oil-300w.jpg"
+                    srcset="images/olive-oil-200w.jpg 200w, images/olive-oil-300w.jpg 300w, images/olive-oil-600w.jpg 600w"
+                    sizes="(min-width:1200px) 20vw, (min-width:900px) 30vw, (min-width:600px) 45vw, 100vw"
+                    alt="Drizzling golden olive oil over fresh harvest."
+                    loading="lazy" decoding="async">
+                    <figcaption><em>Drizzling golden olive oil over fresh harvest.</em></figcaption>
+                </figure>
+
+            <figure class="gallery_card">
+                <img
+                src="images/table-setting-300w.jpg"
+                srcset="images/table-setting-200w.jpg 200w, images/table-setting-300w.jpg 300w, images/table-setting-600w.jpg 600w"
+                sizes="(min-width:1200px) 20vw, (min-width:900px) 30vw, (min-width:600px) 45vw, 100vw"
+                alt="Elegant tablescape under the evening sky."
+                loading="lazy" decoding="async">
+                <figcaption><em>Elegant tablescape under the evening sky.</em></figcaption>
+            </figure>
 
             </div>
+        </section>
     
 
    
