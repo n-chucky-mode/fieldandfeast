@@ -1,18 +1,18 @@
-
 /*CSS BY: Gloria Garcia*/
 /*Imported Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 /*CSS RESET*/
 *,
-*::after,
-*::after{ box-sizing: border-box; }
-html, body{ margin: 0; padding: 0;}
-img{ max-width: 100%; display: block; height:auto; }
+*::before,
+*::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; display: block; height: auto; }
 
 /*Remove bullets/padding in nav lists only*/
-ul[role], nav ul{ list-style: none; padding: 0; margin: 0; }
-a{ color: inherit; text-decoration: none; }
-button, a{ cursor: pointer;}
+ul[role], nav ul { list-style: none; padding: 0; margin: 0; }
+a { color: inherit; text-decoration: none; }
+button, a { cursor: pointer; }
 
 /*ROOT VARIABLES*/
 /*colors, spacing, radii, shadow, container width */
@@ -39,119 +39,214 @@ button, a{ cursor: pointer;}
 }
 
 /*Global Styles*/
-html{ scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 
 body{
-    font-family: "Playfair Display", serif; /* matches spec */
-    color: var(--dark-charcoal);
-    background: var(--linen);
-    line-height: 1.65;
-    font-size: 1rem; /* base size, then headings use clamp for responsiveness */
+  font-family: "Playfair Display", serif; /* matches spec */
+  color: var(--dark-charcoal);
+  background: var(--linen);
+  line-height: 1.65;
+  font-size: 1rem; /* base size; headings use clamp for responsiveness */
 }
 
 /*Keeps content at a readable width and centered*/
-.container{
-    width: min(92vw, var(--container));
-}
+.container{ width: min(92vw, var(--container)); margin-inline: auto; }
+/* Your sections use .section_container instead of .container */
+.section_container{ width: min(92vw, var(--container)); margin-inline: auto; }
 
 /*helps keyboard users skip the header quickly*/
 .skip-link{
-    position: absolute;
-    left: -9999px;
-    top: -9999px;
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+.skip-link:focus{
+  left: 12px; top: 12px;
+  background: var(--champagne-gold);
+  padding: 6px 10px;
+  border-radius: 6px;
+  z-index: 1000;
 }
 
-.skip-link :focus{
-    left: 12px; top: 12px;
-    background: var(--champagne-gold);
-    padding: 6px 10px;
-    border-radius: 6px;
-    z-index: 1000;
-
-}
 /*Site Banner*/
 .site_banner{
-    background: var(--midnight-blue);
-    color: var(--soft-white);
-    text-align: center;
-    padding-bottom: 0;
-
+  background: var(--midnight-blue);
+  color: var(--soft-white);
+  text-align: center;
+  padding-bottom: 0;
 }
-.site_banner_inner{
-    padding: 56px 16px 28px;
+.site_banner_inner{ padding: 56px 16px 28px; }
+.banner_logo{ /* matches your HTML class */
+  width: 110px;
+  margin: 0 auto var(--space-4);
 }
-
-.site_logo{
-    width: 110px;
-    margin: 0 auto var(--space-4);
-}
-
 .brand_title{
-    font-size: clamp(2rem, 6vw, 3.25rem);  /* responsive type */
-    margin: 0 0 var(--space-2);
-    font-weight: 700;
-    letter-spacing: .4px;
+  font-size: clamp(2rem, 6vw, 3.25rem);  /* responsive type */
+  margin: 0 0 var(--space-2);
+  font-weight: 700;
+  letter-spacing: .4px;
 }
-
 .tagline{
-    font-style: italic;
-    opacity: 0.9;
-    margin: 0 0 var(--space-5);
+  font-style: italic;
+  opacity: 0.9;
+  margin: 0 0 var(--space-5);
 }
-/*Navigation bar w/gold strip*/
-.site-nav{
-    background: var(--champagne-gold);
-}
-.site-nav_list{/*check spelling on this in index.html does it match i dont remember*/
-    display: flex;
-    gap: clamp(24px, 6vw, 80px);/*scales spacing by viewport*/
-    justify-content: center;
-    padding: 12px 16px;
-    font-weight: 700;
-}
-.site-nav a{
-    color: #2a261f; /*dark text over gold*/
-}
-.site-nav a :focus-visible,
-.site-nav a :hover{
-    text-decoration: underline;
-} 
 
-/*stop here and check code in validator */
+/*Navigation bar w/gold strip*/
+.site-nav{ background: var(--champagne-gold); }
+.site-nav ul{ /* your <ul> in HTML has no extra class */
+  display: flex;
+  gap: clamp(24px, 6vw, 80px);/*scales spacing by viewport*/
+  justify-content: center;
+  padding: 12px 16px;
+  font-weight: 700;
+}
+.site-nav a{ color: #2a261f; /*dark text over gold*/ }
+.site-nav a:focus-visible,
+.site-nav a:hover{ text-decoration: underline; } 
 
 /*sections*/
-.section{
-    padding: var(--space-7) 0;
+.section,
+.section_container{
+  padding: var(--space-7) 0;
 }
-.section_title{/**check spelling w/index.html not sure if it matches****/
-    font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
-    margin: 0 0 var(--space-4);
-    color: var(--midnight-blue);
-    position: relative;
-    padding-bottom: 10px;/*space for the underline*/
-
+.section_title{
+  font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+  margin: 0 0 var(--space-4);
+  color: var(--midnight-blue);
+  position: relative;
+  padding-bottom: 10px;/*space for the underline*/
 }
 .section_title::after{
-    /*gold underline that matches mockups*/
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 110px;
-    height: 3px;
-    background: var(--champagne-gold);
-    border-radius: 2px;
+  /*gold underline that matches mockups*/
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 110px;
+  height: 3px;
+  background: var(--champagne-gold);
+  border-radius: 2px;
 }
 .lead{
-    margin: 0;
-    margin-top: var(--space-3);
-    max-width: 75ch;/*paragraphs readeable*/
+  margin: 0;
+  margin-top: var(--space-3);
+  max-width: 75ch;/*paragraphs readable*/
 }
 
+/*********************offerings grid************************************/
+.offerings{
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+/* since there is no .card base, give sage cards full card styling */
+.sage_card{
+  background: var(--olive-green);
+  color: var(--soft-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-5);
+}
+.card_title{
+  margin: 0 0 var(--space-3);
+  font-size: 1.375rem;
+}
+.checklist{
+  margin: var(--space-3) 0 var(--space-3) 1.25rem; /* indent bullets a touch */
+  padding: 0;
+}
+.checklist li{ margin-bottom: 6px; }
+.card_wide{ /* spans both columns at medium+ via media query below */ }
 
+/***********Gallery grid***********/
+.gallery_grid{
+  display: grid;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+.gallery_card{
+  background: var(--soft-white);
+  border-radius: var(--radius);
+  overflow: hidden;/*rounds the image corners too*/
+  box-shadow: var(--shadow);
+}
+.gallery_card img{
+  width: 100%;
+  display: block;
+}
+.gallery_card figcaption{
+  padding: 10px 14px 14px;
+  text-align: center;
+  color: var(--dark-charcoal);
+}
 
+/*******CTA button*****************/
+.cta_wrap{ /* matches your HTML */
+  margin-top: var(--space-6);
+  text-align: center;
+}
+/* apply base button styles to both .btn and .primary_btn,
+   because your HTML only uses .primary_btn */
+.btn,
+.primary_btn{
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-align: center;
+  border: 2px solid transparent;
+}
+.primary_btn{
+  background: var(--olive-green);
+  color: var(--soft-white);
+}
+.primary_btn:hover,
+.primary_btn:focus-visible{
+  filter: brightness(.95); /* subtle feedback */
+}
 
+/* ===== FOOTER ===== */
+.site_footer{
+  background: var(--midnight-blue);
+  color: var(--soft-white);
+  padding: 48px 0;
+  text-align: center;
+}
+.site_footer .contact{
+  font-style: normal; /* override default italics on <address> */
+  margin-bottom: var(--space-4);
+  line-height: 1.8;
+}
+.site_footer .email,
+.site_footer .emai{  /* support the class used in your HTML */
+  color: var(--champagne-gold);
+  text-decoration: underline;
+}
+.site_footer .social{
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-top: var(--space-4);
+}
 
+/* MEDIA QUERY (medium)
+   At ≥600px: two-column offerings; gallery 2-up. */
+@media (min-width: 600px){
+  .offerings{ grid-template-columns: repeat(2, 1fr); }
+  .card_wide{ grid-column: 1 / -1; } /* span both columns */
+  .gallery_grid{ grid-template-columns: repeat(2, 1fr); }
+}
 
+/* MEDIA QUERY (large)
+   At ≥900px: widen container, gallery 3-up. */
+@media (min-width: 900px){
+  .container, .section_container{ width: min(90vw, var(--container)); }
+  .gallery_grid{ grid-template-columns: repeat(3, 1fr); }
+}
 
-
+/* MEDIA QUERY (xl)
+   At ≥1200px: gallery 5-up (matches XL mock). */
+@media (min-width: 1200px){
+  .gallery_grid{ grid-template-columns: repeat(5, 1fr); }
+}
