@@ -94,7 +94,7 @@ body{
 
 /*Navigation bar w/gold strip*/
 .site-nav{ background: var(--champagne-gold); }
-.site-nav ul{ /* your <ul> in HTML has no extra class */
+.site-nav ul{ /* <ul> in HTML has no extra class */
   display: flex;
   gap: clamp(24px, 6vw, 80px);/*scales spacing by viewport*/
   justify-content: center;
